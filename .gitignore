@@ -102,3 +102,5 @@ dist
 
 # TernJS port file
 .tern-port
+video-h5/.DS_Store
+*.mp4
