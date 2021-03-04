@@ -11,6 +11,7 @@ import CJ2_4 from '@/components/CJ2/CJ2_4'
 import CJ3 from '@/components/CJ3/IndexPage'
 import Result from '@/components/Result'
 import AddInfo from '@/components/CJ3/AddInfo'
+import Recap from '@/components/Recap'
 
 Vue.use(Router)
 
@@ -20,6 +21,11 @@ export default new Router({
             path: '/',
             name: 'Login',
             component: Login
+        },
+        {
+            path: '/Recap',
+            name: 'Recap',
+            component: Recap
         },
         {
             path: '/CJ1',

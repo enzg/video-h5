@@ -104,3 +104,4 @@ dist
 .tern-port
 video-h5/.DS_Store
 *.mp4
+.DS_Store

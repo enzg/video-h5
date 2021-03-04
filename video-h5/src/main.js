@@ -8,6 +8,7 @@ import globalVar from '@/api/global_var.js'
 import './assets/css/style.css'
 import md5 from 'js-md5';
 import 'babel-polyfill'
+import SlideVerify from 'vue-monoplasty-slide-verify';
 
 
 Vue.config.productionTip = false
@@ -15,6 +16,7 @@ Vue.prototype.g = globalVar
 Vue.prototype.$md5 = md5
 
 Vue.use($)
+Vue.use(SlideVerify);
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

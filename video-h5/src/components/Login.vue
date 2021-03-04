@@ -60,7 +60,17 @@
             },
             login () {
                 // 从localstorge 中检查 recap标志位 如果为true 则跳转 recap页面
-                // 
+                // 如果为false 则停留在recap页面
+                let recap = localStorage.getItem('recap')
+                if(recap === null){
+                    localStorage.setItem('recap','RECAP')
+                }
+                recap = localStorage.getItem('recap')
+                if(recap === 'RECAP'){
+                    this.$router.push('/Recap')
+                }
+                 
+
                 if (this.register_mode) {
                     //调用注册 /UESTC/API/ Reg.aspx? LoginName=用户名& PassWord= 密码&ConPassWord=密码
                     console.log(' /UESTC/API/Reg.aspx?LoginName=' + this.username + '&PassWord=' + this.$md5(this.password) + '&ConPassWord=' + this.$md5(this.password2))
@@ -98,7 +108,8 @@
                             alert(res.data.Msg)
                         }
                     }).catch((e) => {
-                        console.log(e)
+                        localStorage.setItem('recap','RECAP')
+                        this.$router.push('/Recap')
                         alert("登录失败,请检查服务器设置!")
                     })
                 }
